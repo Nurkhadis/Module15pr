@@ -9,6 +9,8 @@ namespace Module15_Practise
 {
     public class Program
     {
+
+        
         static void Main(string[] args)
         {
             ExploreType<MyClass>();
@@ -16,6 +18,10 @@ namespace Module15_Practise
             ManipulateObject();
             InvokePrivateMethod();
         }
+
+
+
+        
         static void ExploreType<T>()
         {
             Type type = typeof(T);
@@ -44,6 +50,9 @@ namespace Module15_Practise
             Console.WriteLine();
         }
 
+
+        
+
         static void CreateInstanceUsingReflection()
         {
             Type type = typeof(MyClass);
@@ -58,7 +67,8 @@ namespace Module15_Practise
             PropertyInfo publicProperty = myObject.GetType().GetProperty("PublicProperty");
             publicProperty.SetValue(myObject, 99);
 
-            // Вызов метода
+
+            
             MethodInfo calculateSumMethod = myObject.GetType().GetMethod("CalculateSum");
             int result = (int)calculateSumMethod.Invoke(myObject, new object[] { 5, 7 });
 
@@ -66,6 +76,8 @@ namespace Module15_Practise
             Console.WriteLine($"The result of calling the method CalculateSum: {result}");
             Console.WriteLine();
         }
+
+        
         static void InvokePrivateMethod()
         {
             MyClass myObject = new MyClass();
